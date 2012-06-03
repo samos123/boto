@@ -57,6 +57,7 @@ class ECSConnection(AWSQueryConnection):
         """
         params['Service'] = "AWSECommerceService"
         params['Operation'] = action
+        params['AssociateTag'] = self.associate_tag
         if page:
             params['ItemPage'] = page
         response = self.make_request(None, params, "/onca/xml")
